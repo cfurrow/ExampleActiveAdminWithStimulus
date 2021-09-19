@@ -13,7 +13,7 @@ This is an example Rails 6.x site that has ActiveAdmin, Devise and Stimulus.js, 
 - (open a new terminal, and run) `bin/rails server`
 
 ## Testing ActiveAdmin + Stimulus
-- visit http://localhost:3000/admin
+- visit http://127.0.0.1:3000/admin/users
 - login with credentials found in `db/seeds.rb`
 - Edit the user you see in the list
 - Click and select the `<select>` dropdown in the password area to see the password inputs go from being enabled/to disabled
