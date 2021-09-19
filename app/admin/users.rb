@@ -16,13 +16,21 @@ ActiveAdmin.register User do
   filter :sign_in_count
   filter :created_at
 
-  form do |f|
+  form html: { "data-controller" => "hello" } do |f|
     f.inputs do
       f.input :email
-      f.input :password
-      f.input :password_confirmation
+      f.li <<-HTML.html_safe
+        <h3>Password stuff below</h3>
+        <div>
+          <select data-hello-target="toggle" name="toggle_password">
+            <option value="on">On</option>
+            <option value="off">Off</option>
+          </select>
+        </div>
+      HTML
+      f.input :password, wrapper_html: { "data-hello-target" => "password" }
+      f.input :password_confirmation, wrapper_html: { "data-hello-target" => "password" }
     end
     f.actions
   end
-
 end
